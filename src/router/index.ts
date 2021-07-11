@@ -2,15 +2,15 @@ import { path } from 'path';
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-11 11:36:56
+ * @LastEditTime: 2021-07-11 12:40:19
  */
 import { createRouter, createWebHashHistory } from 'vue-router';
 import refComp from '@/compositions/ref.vue';
 import renativeComp from '@/compositions/reactive.vue';
 import computedComp from '@/compositions/computed.vue';
 import watchComp from '@/compositions/watch.vue';
-import home from '../view/home.vue';
-import AppRouter from '../layout/AppRouter.vue';
+import home from '@/view/home.vue';
+import AppRouter from '@/layout/AppRouter.vue';
 
 const routes = [
   {

@@ -1,12 +1,13 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-11 10:16:28
- * @LastEditTime: 2021-07-11 10:16:29
+ * @LastEditTime: 2021-07-11 18:03:14
  */
 // rem等比适配配置文件
 // 基准大小
-const baseSize = 37.5;
 // 注意此值要与 postcss.config.js 文件中的 rootValue保持一致
+const baseSize = 37.5;
+
 // 设置 rem 函数
 function setRem() {
   // 当前页面宽度相对于 375宽的缩放比例，可根据自己需要修改,一般设计稿都是宽750(图方便可以拿到设计图后改过来)。
@@ -15,11 +16,12 @@ function setRem() {
   document.documentElement.style.fontSize =
     baseSize * Math.min(scale, 2) + 'px';
 }
+
 // 初始化
 setRem();
+
 // 改变窗口大小时重新设置 rem
 window.onresize = function () {
-  console.log('我执行了');
   setRem();
 };
 

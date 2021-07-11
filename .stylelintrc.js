@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-14 22:23:09
- * @LastEditTime: 2021-07-11 11:25:50
+ * @LastEditTime: 2021-07-11 18:33:21
  */
 module.exports = {
   extends: 'stylelint-config-standard',
@@ -12,5 +12,6 @@ module.exports = {
     'color-hex-case': 'lower',
     'unit-whitelist': ['em', 'rem', '%', 's', 'px', 'deg', 'vh', 'vw'],
     'declaration-colon-newline-after': null,
+    'at-rule-no-unknown': null,
   },
 };

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-11 10:46:08
+ * @LastEditTime: 2021-07-11 18:02:05
  */
 import { createApp } from 'vue';
 import { router } from './router';

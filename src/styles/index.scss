@@ -1,1 +1,24 @@
 @import './common';
+
+html {
+  font-size: calc(
+    100vw / 7.5
+  ); //除以的7.5是根据设计稿的屏幕宽度来定的，这样750px宽度下根元素字体大小则为750px/7.5=100px=1rem
+
+  @media screen and (min-width: 320px) {
+    font-size: 64px;
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: 108px;
+  }
+}
+
+body {
+  font-size: initial; //重置页面字体大小
+  min-width: 320px;
+}
+
+#app {
+  font-size: 14px;
+}

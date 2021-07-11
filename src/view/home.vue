@@ -1,10 +1,17 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-07-11 10:49:35
+ * @LastEditTime: 2021-07-11 11:04:13
 -->
 <template>
-  <div class="home">home</div>
+  <div class="home">
+    home
+    <div class="t-1px">t-1px</div>
+    <div class="r-1px">r-1px</div>
+    <div class="b-1px">b-1px</div>
+    <div class="l-1px">l-1px</div>
+    <div class="f-1px">f-1px</div>
+  </div>
   <van-icon name="chat-o" />
   <van-button type="primary">主要按钮</van-button>
   <van-button type="primary" size="large">大号按钮</van-button>
@@ -22,5 +29,7 @@ export default defineComponent({
 <style lang="scss">
 .home {
   font-size: 20px;
+  color: $color;
+  padding: 10px;
 }
 </style>

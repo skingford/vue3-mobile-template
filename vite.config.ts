@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-11 10:41:11
+ * @LastEditTime: 2021-07-11 10:54:24
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -16,6 +16,15 @@ export default defineConfig({
       vue: 'vue/dist/vue.esm-bundler.js',
       '@': path.resolve(__dirname, 'src'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+    },
+  },
+  // 全局css
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 全局的scss
+        additionalData: `@import "./src/styles/global.scss";`,
+      },
     },
   },
   plugins: [

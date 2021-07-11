@@ -2,23 +2,30 @@ import { path } from 'path';
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-11 12:40:19
+ * @LastEditTime: 2021-07-11 21:05:32
  */
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import refComp from '@/compositions/ref.vue';
 import renativeComp from '@/compositions/reactive.vue';
 import computedComp from '@/compositions/computed.vue';
 import watchComp from '@/compositions/watch.vue';
-import home from '@/view/home.vue';
 import AppRouter from '@/layout/AppRouter.vue';
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: AppRouter,
     children: [
-      { path: '', component: watchComp },
-      { path: 'home', component: home },
+      {
+        path: '',
+        component: () => import('@/views/home.vue'),
+        name: 'Home',
+        meta: {
+          title: '主页',
+          keepAlive: true,
+        },
+      },
+      { path: 'home', component: watchComp },
     ],
   },
   { path: '/watch', component: watchComp },

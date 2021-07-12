@@ -2,7 +2,7 @@ import { path } from 'path';
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-11 21:05:32
+ * @LastEditTime: 2021-07-12 22:12:50
  */
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import refComp from '@/compositions/ref.vue';
@@ -18,14 +18,14 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        component: () => import('@/views/home.vue'),
+        component: () => import('@/views/home/index.vue'),
         name: 'Home',
         meta: {
           title: '主页',
           keepAlive: true,
         },
       },
-      { path: 'home', component: watchComp },
+      { path: 'my', component: () => import('@/views/my/index.vue') },
     ],
   },
   { path: '/watch', component: watchComp },

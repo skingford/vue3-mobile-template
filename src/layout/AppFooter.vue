@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:13:24
- * @LastEditTime: 2021-07-11 11:33:00
+ * @LastEditTime: 2021-07-12 22:13:19
 -->
 <template>
   <van-tabbar
@@ -20,7 +20,7 @@
     >
       个人中心
     </van-tabbar-item>
-    <van-tabbar-item v-else replace to="/home" icon="manager-o">
+    <van-tabbar-item v-else replace to="/my" icon="manager-o">
       个人中心
     </van-tabbar-item>
   </van-tabbar>

@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-12 22:11:40
- * @LastEditTime: 2021-07-12 23:47:12
+ * @LastEditTime: 2021-07-14 01:07:10
 -->
 <template>
   <div>
@@ -16,40 +16,28 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
+import { changeParams } from '@utils/tool';
 
 export default defineComponent({
   setup() {
-    const form = reactive({
+    const copyForm: {
+      [key: string]: unknown;
+    } = { name: 'kingford', age: 18, sex: 1 };
+
+    const form: {
+      [key: string]: unknown;
+    } = reactive({
       name: 'kf',
       age: 1,
       sex: 1,
     });
 
-    const newForm: string[] = [];
-
     const onChange = (e: { target: HTMLInputElement }) => {
-      console.log(e.target.value);
-      console.log(e.target.name);
-      const v = e.target.name;
+      form.age = 20;
+      const newMap = changeParams(copyForm, form);
 
-      const isExit = newForm.indexOf(v);
-      if (isExit === -1) {
-        newForm.push(e.target.name);
-      }
-      console.log(newForm);
+      console.log(newMap);
     };
-
-    let handler = {
-      get: function (target: { [key: string]: unknown }, name: string) {
-        console.log(target[name]);
-        return name in target ? target[name] : '';
-      },
-    };
-
-    let p = new Proxy(form, handler);
-
-    p.name = 'kingford';
-    p.age = 18;
 
     return {
       form,

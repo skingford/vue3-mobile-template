@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-12 22:11:40
- * @LastEditTime: 2021-07-14 01:07:10
+ * @LastEditTime: 2021-07-14 01:14:07
 -->
 <template>
   <div>
@@ -32,11 +32,16 @@ export default defineComponent({
       sex: 1,
     });
 
-    const onChange = (e: { target: HTMLInputElement }) => {
-      form.age = 20;
-      const newMap = changeParams(copyForm, form);
+    const handleProxy = {
+      get(obj: any, prop: any) {
+        console.log(obj[prop]);
+      },
+    };
 
-      console.log(newMap);
+    const p = new Proxy(form, handleProxy);
+
+    const onChange = (e: { target: HTMLInputElement }) => {
+      p.name = e.target.value;
     };
 
     return {

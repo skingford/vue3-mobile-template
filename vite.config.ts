@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-11 11:07:16
+ * @LastEditTime: 2021-07-28 16:22:44
  */
 import path from 'path';
 import { defineConfig } from 'vite';
@@ -44,6 +44,7 @@ export default defineConfig({
   ],
   server: {
     port: 4000,
+    host: '0.0.0.0',
     proxy: {},
   },
 });

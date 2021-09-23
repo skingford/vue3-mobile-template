@@ -1,16 +1,16 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 18:55:35
+ * @LastEditTime: 2021-09-23 19:32:37
  */
 import { createApp } from 'vue';
-
-import App from './App.vue';
 
 // global styles
 import 'normalize.css/normalize.css';
 import './styles/index.scss';
-import '@/config/rem';
+import './styles/tailwind.css';
+// root component
+import App from './App.vue';
 // vant components
 import { setupVantComponet } from '@/hooks/vant';
 import { setupRouter, router } from '@/router';

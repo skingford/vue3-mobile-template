@@ -1,10 +1,11 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-11 10:13:13
- * @LastEditTime: 2021-07-11 10:14:34
+ * @LastEditTime: 2021-09-23 19:36:56
  */
 module.exports = {
   plugins: {
+    tailwindcss: {},
     autoprefixer: {},
     'postcss-pxtorem': {
       // 数字|函数）表示根元素字体大小或根据input参数返回根元素字体大小

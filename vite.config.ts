@@ -1,12 +1,12 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 14:29:14
+ * @LastEditTime: 2021-09-23 19:20:59
  */
 import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
-import dayjs from 'dayjs';
+import { format } from './src/utils/dateUtil';
 
 import { wrapperEnv } from './build/utils';
 import { createVitePlugins } from './build/vite/plugin';
@@ -17,7 +17,7 @@ import pkg from './package.json';
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
   pkg: { dependencies, devDependencies, name, version },
-  lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+  lastBuildTime: format(new Date()),
 };
 
 function pathResolve(dir: string) {
@@ -30,8 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
   const isBuild = command === 'build';
-  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } =
-    viteEnv;
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } = viteEnv;
 
   return {
     base: VITE_PUBLIC_PATH,

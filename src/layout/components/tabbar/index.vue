@@ -1,11 +1,11 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:13:24
- * @LastEditTime: 2021-09-23 18:50:08
+ * @LastEditTime: 2021-09-23 18:59:25
 -->
 <template>
   <van-tabbar route active-color="#fc9681" inactive-color="#ccc" safe-area-inset-bottom>
-    <van-tabbar-item replace to="/" icon="wap-home-o">主页面</van-tabbar-item>
+    <van-tabbar-item replace to="/tabbar/home" icon="wap-home-o">主页面</van-tabbar-item>
     <van-tabbar-item replace to="/tabbar/news" icon="manager-o" :badge="msgNum">
       消息
     </van-tabbar-item>

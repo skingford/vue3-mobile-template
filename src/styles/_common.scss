@@ -3,6 +3,7 @@
 // 下边框
 .b-1px {
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -21,6 +22,7 @@
 /* 上边框 */
 .t-1px {
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -39,6 +41,7 @@
 /* 右边框 */
 .r-1px {
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -57,6 +60,7 @@
 /* 左边框 */
 .l-1px {
   position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -75,6 +79,7 @@
 /* 四条边 */
 .f-1px {
   position: relative;
+
   &::after {
     content: ' ';
     position: absolute;

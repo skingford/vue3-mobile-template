@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 18:00:40
+ * @LastEditTime: 2021-09-23 18:55:35
  */
 import { createApp } from 'vue';
 
@@ -20,6 +20,7 @@ import { initAppConfig } from '@/config';
 async function bootstrap() {
   const app = createApp(App);
 
+  // app 初始化配置
   initAppConfig();
 
   // register router

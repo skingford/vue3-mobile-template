@@ -1,26 +1,35 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:19:30
- * @LastEditTime: 2021-09-23 19:06:21
+ * @LastEditTime: 2021-09-23 20:10:33
 -->
 <template>
-  <div class="header-container">
-    <div v-if="isLeftButton" class="header-icon" @click="goBack">
-      <van-icon name="arrow-left" />
-    </div>
-    <span>{{ title }}</span>
-    <slot name="right"></slot>
-  </div>
+  <van-nav-bar
+    safe-area-inset-top
+    fixed
+    :title="title"
+    :left-text="leftText"
+    :right-text="rightText"
+    :left-arrow="leftArrow"
+    :border="border"
+    @click-left="onClickLeft"
+    @click-right="onClickRight"
+  />
 </template>
 
 <script lang="ts">
 import { useRouter } from 'vue-router';
+import { Toast } from 'vant';
+
 export default {
   props: {
     // 头部标题
     title: { type: String, default: 'jin-app' },
-    // 是否显示返回按钮
-    isLeftButton: { type: Boolean, default: true },
+    leftText: { type: String, default: '' },
+    rightText: { type: String, default: '' },
+    // 是否显示左侧箭头
+    leftArrow: { type: Boolean, default: true },
+    border: { type: Boolean, default: true },
   },
   setup() {
     const router = useRouter();
@@ -28,8 +37,13 @@ export default {
       router.back();
     };
 
+    const onClickLeft = () => Toast('返回');
+    const onClickRight = () => Toast('按钮');
+
     return {
       goBack,
+      onClickLeft,
+      onClickRight,
     };
   },
 };

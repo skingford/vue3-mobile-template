@@ -1,10 +1,10 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:15:47
- * @LastEditTime: 2021-09-23 19:07:08
+ * @LastEditTime: 2021-09-23 20:02:49
 -->
 <template>
-  <app-header :isLeftButton="false"></app-header>
+  <app-header :leftArrow="false"></app-header>
   <router-view></router-view>
   <app-tabbar></app-tabbar>
 </template>

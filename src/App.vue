@@ -1,10 +1,10 @@
 <!--
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 14:04:33
+ * @LastEditTime: 2021-09-23 20:17:42
 -->
 <template>
-  <el-config-provider>
+  <van-config-provider :theme-vars="themeVars">
     <div v-cloak>
       <router-view v-slot="{ Component }">
         <transition>
@@ -14,5 +14,20 @@
         </transition>
       </router-view>
     </div>
-  </el-config-provider>
+  </van-config-provider>
 </template>
+<script lang="ts">
+import { navBarConfig } from '@/hooks/vant';
+
+export default {
+  setup() {
+    const themeVars = {
+      ...navBarConfig,
+    };
+
+    return {
+      themeVars,
+    };
+  },
+};
+</script>

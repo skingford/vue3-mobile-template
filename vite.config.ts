@@ -1,50 +1,84 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-28 16:22:44
+ * @LastEditTime: 2021-09-23 14:29:14
  */
-import path from 'path';
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import styleImport from 'vite-plugin-style-import';
+import { resolve } from 'path';
+import type { UserConfig, ConfigEnv } from 'vite';
+import { loadEnv } from 'vite';
+import dayjs from 'dayjs';
+
+import { wrapperEnv } from './build/utils';
+import { createVitePlugins } from './build/vite/plugin';
+import { OUTPUT_DIR } from './build/constant';
+import { createProxy } from './build/vite/proxy';
+import pkg from './package.json';
+
+const { dependencies, devDependencies, name, version } = pkg;
+const __APP_INFO__ = {
+  pkg: { dependencies, devDependencies, name, version },
+  lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+};
+
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
+}
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  resolve: {
-    alias: {
-      vue: 'vue/dist/vue.esm-bundler.js',
-      '@': path.resolve(__dirname, 'src'),
-      '@utils': path.resolve(__dirname, 'src/utils'),
-    },
-  },
-  // 全局css
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // 全局的scss
-        additionalData: `@import "./src/styles/global.scss";`,
+export default ({ command, mode }: ConfigEnv): UserConfig => {
+  const root = process.cwd();
+  const env = loadEnv(mode, root);
+  const viteEnv = wrapperEnv(env);
+  const isBuild = command === 'build';
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE } =
+    viteEnv;
+
+  return {
+    base: VITE_PUBLIC_PATH,
+    root,
+    resolve: {
+      alias: {
+        '@': pathResolve('src'),
+        '#': pathResolve('types'),
+        '@utils': pathResolve('src/utils'),
       },
     },
-  },
-  plugins: [
-    vue(),
-    // 配置支持jsx语法
-    vueJsx({}),
-    // 配置vant样式按需引入
-    styleImport({
-      libs: [
-        {
-          libraryName: 'vant',
-          esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style`,
+    // 定义全局常量
+    define: {
+      __INTLIFY_PROD_DEVTOOLS__: false,
+      __APP_INFO__: JSON.stringify(__APP_INFO__),
+    },
+
+    build: {
+      target: 'es2015',
+      outDir: OUTPUT_DIR,
+      terserOptions: {
+        compress: {
+          keep_infinity: true,
+          drop_console: VITE_DROP_CONSOLE,
         },
-      ],
-    }),
-  ],
-  server: {
-    port: 5000,
-    host: '0.0.0.0',
-    proxy: {},
-  },
-});
+      },
+      brotliSize: false,
+      chunkSizeWarningLimit: 2000,
+    },
+
+    // 全局css
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 全局的scss
+          additionalData: `@import "./src/styles/global.scss";`,
+        },
+      },
+    },
+
+    plugins: createVitePlugins(viteEnv, isBuild),
+
+    server: {
+      host: true, //'0.0.0.0'
+      port: VITE_PORT,
+      open: true,
+      proxy: createProxy(VITE_PROXY),
+    },
+  };
+};

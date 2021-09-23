@@ -1,8 +1,7 @@
-import { path } from 'path';
 /*
  * @Author: kingford
  * @Date: 2021-06-27 11:14:16
- * @LastEditTime: 2021-07-12 22:12:50
+ * @LastEditTime: 2021-09-23 14:39:16
  */
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import refComp from '@/compositions/ref.vue';

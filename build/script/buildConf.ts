@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-08-17 16:07:10
- * @LastEditTime: 2021-09-23 14:12:21
+ * @LastEditTime: 2021-09-23 14:46:33
  */
 /**
  * Generate additional configuration files when used for packaging. The file can be configured with some global variables, so that it can be changed directly externally without repackaging
@@ -38,19 +38,10 @@ function createConfig(
     fs.mkdirp(getRootPath(OUTPUT_DIR));
     writeFileSync(getRootPath(`${OUTPUT_DIR}/${configFileName}`), configStr);
 
-    console.log(
-      chalk.cyan(`✨ [${pkg.name}]`) +
-        ` - configuration file is build successfully:`
-    );
-    console.log(
-      chalk.gray(OUTPUT_DIR + '/' + chalk.green(configFileName)) + '\n'
-    );
+    console.log(chalk.cyan(`✨ [${pkg.name}]`) + ` - configuration file is build successfully:`);
+    console.log(chalk.gray(OUTPUT_DIR + '/' + chalk.green(configFileName)) + '\n');
   } catch (error) {
-    console.log(
-      chalk.red(
-        'configuration file configuration file failed to package:\n' + error
-      )
-    );
+    console.log(chalk.red('configuration file configuration file failed to package:\n' + error));
   }
 }
 

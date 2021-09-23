@@ -1,0 +1,11 @@
+*.js
+*.png
+*.ttf
+
+.env
+.env.development
+.env.production
+
+/dist/*
+/public/*
+public/*

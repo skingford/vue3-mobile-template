@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-07-11 11:04:13
+ * @LastEditTime: 2021-09-23 20:26:58
 -->
 <template>
   <div class="home">
@@ -12,6 +12,7 @@
     <div class="l-1px">l-1px</div>
     <div class="f-1px">f-1px</div>
   </div>
+  <div>23333333333333333</div>
   <van-icon name="chat-o" />
   <van-button type="primary">主要按钮</van-button>
   <van-button type="primary" size="large">大号按钮</van-button>

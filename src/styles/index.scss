@@ -1,4 +1,9 @@
 @import './common';
+@import './font';
+
+html body {
+  font-family: 'PingFangSC';
+}
 
 html {
   @media screen and (min-width: 320px) {

@@ -12,7 +12,8 @@
     // add path
     "baseUrl": "./",
     "paths": {
-      "@": ["src"],
+      "@/*": ["src/*"],
+      "#/*": ["types/*"],
       "@utils/*": ["src/utils/*"]
     }
   },
@@ -21,6 +22,11 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "src/main.js"
-  ]
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }

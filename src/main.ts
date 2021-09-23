@@ -1,13 +1,11 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-07-11 18:02:05
+ * @LastEditTime: 2021-09-23 14:06:44
  */
 import { createApp } from 'vue';
 import { router } from './router';
-//import App from './App.vue'
-import App from './App';
-import storage from '@utils/storage';
+import App from './App.vue';
 
 // global styles
 import 'normalize.css/normalize.css';
@@ -17,8 +15,6 @@ import '@utils/rem';
 import { useVantComponet } from '@utils/vant.component';
 
 const app = createApp(App);
-
-app.config.globalProperties.$storage = storage;
 
 useVantComponet(app);
 

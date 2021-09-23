@@ -1,16 +1,27 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
     "jsx": "preserve",
+    "allowJs": true,
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
     "lib": ["esnext", "dom"],
+    "types": ["vite/client"],
+    "typeRoots": ["node_modules/@types/", "types"],
+    "noImplicitAny": false,
+    "skipLibCheck": true,
     // add path
-    "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
       "#/*": ["types/*"],

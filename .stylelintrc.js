@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-14 22:23:09
- * @LastEditTime: 2021-09-23 19:19:21
+ * @LastEditTime: 2021-09-23 19:39:39
  */
 module.exports = {
   root: true,
@@ -12,7 +12,7 @@ module.exports = {
       true,
       {
         ignoreAtRules: [
-          '@tailwind',
+          'tailwind',
           'tailwind',
           'apply',
           'variants',

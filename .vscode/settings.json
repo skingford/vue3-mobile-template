@@ -25,5 +25,7 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.formatOnSave": true,
   "cSpell.ignoreWords": ["menu", "mixins"],
-  "files.autoSave": "onWindowChange"
+  "files.autoSave": "onWindowChange",
+  // 忽略unknownAtRules
+  "css.lint.unknownAtRules": "ignore"
 }

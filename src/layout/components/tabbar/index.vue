@@ -1,28 +1,15 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:13:24
- * @LastEditTime: 2021-07-12 22:13:19
+ * @LastEditTime: 2021-09-23 18:30:10
 -->
 <template>
-  <van-tabbar
-    route
-    active-color="#fc9681"
-    inactive-color="#ccc"
-    safe-area-inset-bottom
-  >
+  <van-tabbar route active-color="#fc9681" inactive-color="#ccc" safe-area-inset-bottom>
     <van-tabbar-item replace to="/" icon="wap-home-o">主页面</van-tabbar-item>
-    <van-tabbar-item
-      v-if="msgNum > 0"
-      replace
-      to="/home"
-      icon="manager-o"
-      :badge="msgNum"
-    >
-      个人中心
+    <van-tabbar-item replace to="/tabbar/home" icon="manager-o" :badge="msgNum">
+      消息
     </van-tabbar-item>
-    <van-tabbar-item v-else replace to="/my" icon="manager-o">
-      个人中心
-    </van-tabbar-item>
+    <van-tabbar-item replace to="/tabbar/me" icon="manager-o"> 个人中心 </van-tabbar-item>
   </van-tabbar>
 </template>
 

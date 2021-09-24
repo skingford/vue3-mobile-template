@@ -1,9 +1,10 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-09-24 10:57:41
+ * @LastEditTime: 2021-09-24 11:29:32
 -->
 <template>
+  <van-pull-refresh />
   <div class="home">
     home
     <div class="t-1px">t-1px</div>

@@ -1,10 +1,10 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:36:38
- * @LastEditTime: 2021-09-23 18:31:56
+ * @LastEditTime: 2021-09-24 11:32:50
  */
 import type { AppRouteModule } from '@/router/types';
-import { LAYOUT } from '@/router/constant';
+import { TABBAR_LAYOUT as LAYOUT } from '@/router/constant';
 
 const tabbar: AppRouteModule = {
   path: '/tabbar',
@@ -13,7 +13,7 @@ const tabbar: AppRouteModule = {
   redirect: '/tabbar/home',
   meta: {
     title: '首页',
-    icon: 'el-icon-copy-document',
+    icon: 'wap-home-o',
   },
   children: [
     {

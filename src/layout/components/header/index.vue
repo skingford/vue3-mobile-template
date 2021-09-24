@@ -1,13 +1,13 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:19:30
- * @LastEditTime: 2021-09-23 20:10:33
+ * @LastEditTime: 2021-09-24 11:22:13
 -->
 <template>
   <van-nav-bar
     safe-area-inset-top
     fixed
-    :title="title"
+    :title="currentTitle"
     :left-text="leftText"
     :right-text="rightText"
     :left-arrow="leftArrow"
@@ -18,21 +18,31 @@
 </template>
 
 <script lang="ts">
+import { defineComponent, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { Toast } from 'vant';
 
-export default {
+export default defineComponent({
   props: {
     // 头部标题
-    title: { type: String, default: 'jin-app' },
-    leftText: { type: String, default: '' },
-    rightText: { type: String, default: '' },
+    title: { type: String },
+    leftText: { type: String },
+    rightText: { type: String },
     // 是否显示左侧箭头
     leftArrow: { type: Boolean, default: true },
     border: { type: Boolean, default: true },
   },
-  setup() {
+  setup(props) {
     const router = useRouter();
+
+    const currentTitle = computed(() => {
+      const { title } = router.currentRoute.value.meta;
+      if (props.title) {
+        return props.title;
+      }
+      return title;
+    });
+
     const goBack = () => {
       router.back();
     };
@@ -44,9 +54,10 @@ export default {
       goBack,
       onClickLeft,
       onClickRight,
+      currentTitle,
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

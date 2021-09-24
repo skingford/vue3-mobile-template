@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-11 10:41:34
- * @LastEditTime: 2021-09-23 20:06:29
+ * @LastEditTime: 2021-09-24 11:03:31
  */
 
 import {
@@ -14,6 +14,7 @@ import {
   Empty,
   NavBar,
   ConfigProvider,
+  PullRefresh,
 } from 'vant';
 
 export const vantComponents = [
@@ -26,4 +27,5 @@ export const vantComponents = [
   Empty,
   NavBar,
   ConfigProvider,
+  PullRefresh,
 ];

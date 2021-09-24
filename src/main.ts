@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 19:32:37
+ * @LastEditTime: 2021-09-24 09:46:37
  */
 import { createApp } from 'vue';
 
@@ -15,10 +15,14 @@ import App from './App.vue';
 import { setupVantComponet } from '@/hooks/vant';
 import { setupRouter, router } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
+import { setupErrorHandle } from '@/logics/error-handle';
 import { initAppConfig } from '@/config';
 
 async function bootstrap() {
   const app = createApp(App);
+
+  // 错误收集
+  setupErrorHandle(app);
 
   // app 初始化配置
   initAppConfig();

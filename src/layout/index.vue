@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:15:47
- * @LastEditTime: 2021-09-24 11:28:21
+ * @LastEditTime: 2021-09-24 14:36:22
 -->
 <template>
   <div class="app-layout">
@@ -22,7 +22,9 @@ export default defineComponent({
 .app-layout {
   height: 100%;
   padding-top: 50px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 </style>

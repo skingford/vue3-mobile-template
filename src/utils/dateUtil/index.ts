@@ -1,14 +1,14 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 10:17:39
- * @LastEditTime: 2021-09-23 16:59:36
+ * @LastEditTime: 2021-09-24 15:05:51
  */
 
 import dayjs from 'dayjs';
-import { DATE_TIME_FORMAT, DATE_FORMAT, dateType } from './constant';
+import { DATE_TIME_FORMAT_SECOND, DATE_FORMAT, dateType } from './constant';
 
 // 格式化日期时间
-export function format(date: dateType, format = DATE_TIME_FORMAT): string {
+export function format(date: dateType, format = DATE_TIME_FORMAT_SECOND): string {
   if (!date) {
     return '';
   }

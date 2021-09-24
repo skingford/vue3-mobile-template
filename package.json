@@ -17,9 +17,9 @@
   "dependencies": {
     "axios": "^0.21.4",
     "dayjs": "^1.10.7",
-    "pinia": "2.0.0-beta.5",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
+    "pinia": "2.0.0-beta.5",
     "vant": "^3.1.3",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10"
@@ -52,6 +52,7 @@
     "stylelint-webpack-plugin": "^3.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.4.3",
+    "vconsole": "^3.9.1",
     "vite": "^2.5.10",
     "vite-plugin-compression": "^0.3.5",
     "vite-plugin-html": "^2.1.0",
@@ -59,6 +60,7 @@
     "vite-plugin-pwa": "^0.11.2",
     "vite-plugin-style-import": "^1.2.1",
     "vite-plugin-svg-icons": "^1.0.4",
+    "vite-plugin-vconsole": "^1.1.0",
     "vite-plugin-windicss": "^1.4.4",
     "vue-tsc": "^0.3.0"
   },

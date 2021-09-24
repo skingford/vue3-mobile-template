@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-25 11:39:33
- * @LastEditTime: 2021-08-30 22:50:29
+ * @LastEditTime: 2021-09-24 17:34:23
  */
 import { GlobEnvConfig } from '#/config';
 
@@ -90,3 +90,5 @@ export function isDevMode(): boolean {
 export function isProdMode(): boolean {
   return import.meta.env.PROD;
 }
+
+export const isProductionEnv = process.env.NODE_ENV === 'production';

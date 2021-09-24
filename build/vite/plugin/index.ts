@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-29 10:44:50
- * @LastEditTime: 2021-09-23 14:20:29
+ * @LastEditTime: 2021-09-24 17:55:05
  */
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -16,6 +16,7 @@ import { configHtmlPlugin } from './html';
 import { configImageminPlugin } from './imagemin';
 import { configCompressPlugin } from './compress';
 import { configPwaConfig } from './pwa';
+import { vconsolePlugin } from './vconsole';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const {
@@ -31,6 +32,9 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   vitePlugins.push(windiCSS() as any);
 
   !isBuild && vitePlugins.push(configHmrPlugin());
+
+  // vite-plugin-vconsole
+  !isBuild && vitePlugins.push(vconsolePlugin());
 
   // @vitejs/plugin-legacy
   VITE_LEGACY && isBuild && vitePlugins.push(legacy());
@@ -51,10 +55,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
 
     // rollup-plugin-gzip
     vitePlugins.push(
-      configCompressPlugin(
-        VITE_BUILD_COMPRESS,
-        VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE
-      ) as any
+      configCompressPlugin(VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE) as any
     );
 
     // vite-plugin-pwa

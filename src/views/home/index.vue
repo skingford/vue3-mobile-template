@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-09-23 20:26:58
+ * @LastEditTime: 2021-09-24 10:57:41
 -->
 <template>
   <div class="home">
@@ -12,13 +12,13 @@
     <div class="l-1px">l-1px</div>
     <div class="f-1px">f-1px</div>
   </div>
-  <div>23333333333333333</div>
+  <div v-for="i in 100">{{ i }}</div>
   <van-icon name="chat-o" />
-  <van-button type="primary">主要按钮</van-button>
-  <van-button type="primary" size="large">大号按钮</van-button>
-  <van-button type="primary" size="normal">普通按钮</van-button>
-  <van-button type="primary" size="small">小型按钮</van-button>
-  <van-button type="primary" size="mini">迷你按钮</van-button>
+  <van-button type="primary">主要按钮</van-button> <br />
+  <van-button type="primary" size="large">大号按钮</van-button> <br />
+  <van-button type="primary" size="normal">普通按钮</van-button> <br />
+  <van-button type="primary" size="small">小型按钮</van-button> <br />
+  <van-button type="primary" size="mini">迷你按钮</van-button> <br />
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

@@ -1,11 +1,9 @@
 @import './common';
 @import './font';
 
-html body {
-  font-family: 'PingFangSC';
-}
-
 html {
+  height: 100%;
+
   @media screen and (min-width: 320px) {
     font-size: 64px;
   }
@@ -13,11 +11,18 @@ html {
   @media screen and (max-width: 540px) {
     font-size: 108px;
   }
-}
 
-body {
-  font-size: initial; //重置页面字体大小
-  min-width: 320px;
+  body {
+    height: 100%;
+    font-family: 'PingFangSC';
+    font-size: initial; //重置页面字体大小
+    min-width: 320px;
+
+    #app,
+    .van-config-provider {
+      height: 100%;
+    }
+  }
 }
 
 [v-cloak] {

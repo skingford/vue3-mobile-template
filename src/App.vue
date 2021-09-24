@@ -1,11 +1,11 @@
 <!--
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 20:17:42
+ * @LastEditTime: 2021-09-24 10:52:04
 -->
 <template>
   <van-config-provider :theme-vars="themeVars">
-    <div v-cloak>
+    <div class="app-container" v-cloak>
       <router-view v-slot="{ Component }">
         <transition>
           <keep-alive>
@@ -31,3 +31,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.app-container {
+  height: 100%;
+}
+</style>

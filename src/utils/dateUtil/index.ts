@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 10:17:39
- * @LastEditTime: 2021-09-24 15:05:51
+ * @LastEditTime: 2021-09-25 09:56:44
  */
 
 import dayjs from 'dayjs';
@@ -88,5 +88,10 @@ export function minuteToHour(value) {
 
   return time;
 }
+
+// 苹果日期
+export const iosFormat = (date) => {
+  return date.replace(/\-/g, '/');
+};
 
 export const dateUtil = dayjs;

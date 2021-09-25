@@ -1,21 +1,30 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-28 16:18:58
- * @LastEditTime: 2021-09-23 19:46:56
+ * @LastEditTime: 2021-09-25 09:45:41
 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <!-- van 适配 -->
+    <!-- viewport -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+      content="width=device-width,user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
     />
+    <!-- 忽略自动识别电话 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略自动识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 忽略自动识别电话和邮箱 -->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- 禁止页面缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+
     <title>Vue Mobile Template</title>
   </head>
-  <body>
+  <body ontouchstart>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

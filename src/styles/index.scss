@@ -1,7 +1,17 @@
 @import './common';
 @import './font';
 
+* {
+  // 禁止字体调整
+  text-size-adjust: 100%;
+  // 禁止高亮显示
+  -webkit-tap-highlight-color: transparent;
+  // 文字换行
+  white-space: pre-line;
+}
+
 html {
+  //  font-size: calc(100vw / 7.5);
   height: 100%;
 
   @media screen and (min-width: 320px) {
@@ -12,17 +22,36 @@ html {
     font-size: 108px;
   }
 
+  @media screen and (max-width: 1024px) {
+    font-size: calc(100vw / 7.5);
+  }
+
   body {
     height: 100%;
     font-family: 'PingFangSC';
     font-size: initial; //重置页面字体大小
     min-width: 320px;
+    // 弹性滚动
+    -webkit-overflow-scrolling: touch;
+    // 禁止屏幕抖动
+    padding-right: calc(100vw - 100%);
 
     #app,
     .van-config-provider {
       height: 100%;
     }
   }
+}
+
+button,
+input,
+select,
+textarea {
+  appearance: none;
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(102, 102, 255);
 }
 
 [v-cloak] {

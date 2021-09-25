@@ -6,8 +6,6 @@
   text-size-adjust: 100%;
   // 禁止高亮显示
   -webkit-tap-highlight-color: transparent;
-  // 文字换行
-  white-space: pre-line;
 }
 
 html {
@@ -34,7 +32,7 @@ html {
     // 弹性滚动
     -webkit-overflow-scrolling: touch;
     // 禁止屏幕抖动
-    padding-right: calc(100vw - 100%);
+    // padding-right: calc(100vw - 100%);
 
     #app,
     .van-config-provider {

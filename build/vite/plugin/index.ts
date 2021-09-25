@@ -1,12 +1,11 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-29 10:44:50
- * @LastEditTime: 2021-09-24 17:55:05
+ * @LastEditTime: 2021-09-25 09:35:56
  */
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import legacy from '@vitejs/plugin-legacy';
-import windiCSS from 'vite-plugin-windicss';
+// import windiCSS from 'vite-plugin-windicss';
 
 // 自定义插件配置
 import { configHmrPlugin } from './hmr';
@@ -16,7 +15,8 @@ import { configHtmlPlugin } from './html';
 import { configImageminPlugin } from './imagemin';
 import { configCompressPlugin } from './compress';
 import { configPwaConfig } from './pwa';
-import { vconsolePlugin } from './vconsole';
+import { legacyPlugin } from './legacy';
+//import { vconsolePlugin } from './vconsole';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const {
@@ -29,15 +29,15 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const vitePlugins = [vue(), vueJsx()];
 
   // vite-plugin-windicss
-  vitePlugins.push(windiCSS() as any);
+  // vitePlugins.push(windiCSS() as any);
 
   !isBuild && vitePlugins.push(configHmrPlugin());
 
   // vite-plugin-vconsole
-  !isBuild && vitePlugins.push(vconsolePlugin());
+  // !isBuild && vitePlugins.push(vconsolePlugin());
 
   // @vitejs/plugin-legacy
-  VITE_LEGACY && isBuild && vitePlugins.push(legacy());
+  VITE_LEGACY && isBuild && vitePlugins.push(legacyPlugin());
 
   // vite-plugin-html
   vitePlugins.push(configHtmlPlugin(viteEnv, isBuild) as any);

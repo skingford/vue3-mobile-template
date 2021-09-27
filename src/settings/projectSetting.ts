@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 09:57:31
- * @LastEditTime: 2021-09-24 09:48:51
+ * @LastEditTime: 2021-09-27 19:37:41
  */
 import { CacheTypeEnum } from '@/enums/cacheEnum';
 
@@ -21,7 +21,7 @@ const setting: ProjectConfig = {
   device: 'desktop',
   isCollapse: false,
   withoutAnimation: false,
-  useErrorHandle: true,
+  useErrorHandle: false,
 };
 
 export default setting;

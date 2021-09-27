@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-09-27 15:42:44
- * @LastEditTime: 2021-09-27 19:23:47
+ * @LastEditTime: 2021-09-27 19:42:18
 -->
 <template>
   <div class="p-2">当前语言:{{ t('home.name') }}({{ lang }})</div>
@@ -22,21 +22,24 @@
   </van-radio-group>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
+import { defineComponent, reactive, toRefs, watch } from 'vue';
 import { useLocale } from '@/locales/useLocale';
 import type { LocaleType } from '#/config';
 import { localeList } from '@/settings/localeSetting';
 import { useI18n } from '@/hooks/web/useI18n';
+import { useLocaleStore } from '@/store/modules/locale';
 
 export default defineComponent({
   setup() {
     const { t } = useI18n();
     const { changeLocale } = useLocale();
-    const state = reactive({ lang: 'zh_CN' });
+    const localStore = useLocaleStore();
+    const state = reactive({ lang: localStore.localInfo.locale });
 
-    const selectLang = async () => {
+    async function selectLang() {
       await changeLocale(state.lang as LocaleType);
-    };
+      location.reload();
+    }
 
     return {
       t,

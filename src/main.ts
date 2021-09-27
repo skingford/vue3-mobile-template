@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-27 14:44:20
+ * @LastEditTime: 2021-09-27 19:42:44
  */
 import { createApp } from 'vue';
 
@@ -15,7 +15,7 @@ import App from './App.vue';
 import { setupVantComponet } from '@/hooks/vant';
 import { setupRouter, router } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
-import { setupErrorHandle, setupVConsole } from '@/logics';
+import { setupErrorHandle } from '@/logics';
 import { initAppConfig } from '@/config';
 import { setupI18n } from '@/locales/setupI18n';
 
@@ -25,7 +25,7 @@ async function bootstrap() {
   // 错误收集
   setupErrorHandle(app);
 
-  setupVConsole();
+  // setupVConsole();
 
   // app 初始化配置
   initAppConfig();

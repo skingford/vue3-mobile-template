@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-11 10:41:34
- * @LastEditTime: 2021-09-27 15:48:32
+ * @LastEditTime: 2021-09-27 19:36:34
  */
 
 import {
@@ -17,11 +17,11 @@ import {
   PullRefresh,
   Collapse,
   CollapseItem,
-  Cell,
-  CellGroup,
   Calendar,
   Radio,
   RadioGroup,
+  Cell,
+  CellGroup,
 } from 'vant';
 
 export const vantComponents = [
@@ -37,9 +37,9 @@ export const vantComponents = [
   PullRefresh,
   Collapse,
   CollapseItem,
-  Cell,
-  CellGroup,
   Calendar,
   Radio,
   RadioGroup,
+  Cell,
+  CellGroup,
 ];

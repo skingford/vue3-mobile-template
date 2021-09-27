@@ -1,14 +1,14 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 10:13:06
- * @LastEditTime: 2021-09-24 09:42:23
+ * @LastEditTime: 2021-09-27 19:12:07
  */
 import type { ErrorLogInfo } from '#/store';
 import { defineStore } from 'pinia';
 import { store } from '@/store';
 
 import { format } from '@/utils/dateUtil';
-import projectSetting from '@/setting/projectSetting';
+import projectSetting from '@/settings/projectSetting';
 
 import { ErrorTypeEnum } from '@/enums/exceptionEnum';
 

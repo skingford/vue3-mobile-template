@@ -1,15 +1,19 @@
 /*
  * @Author: kingford
  * @Date: 2021-09-27 14:10:02
- * @LastEditTime: 2021-09-27 15:27:01
+ * @LastEditTime: 2021-09-27 19:11:53
  */
 import type { LocaleSetting, LocaleType } from '#/config';
 
 import { defineStore } from 'pinia';
 import { store } from '@/store';
-import { localeSetting } from '@/setting/localeSetting';
 
-const lsLocaleSetting = localeSetting;
+import { LOCALE_KEY } from '@/enums/cacheEnum';
+import { createLocalStorage } from '@/utils/cache';
+import { localeSetting } from '@/settings/localeSetting';
+
+const ls = createLocalStorage();
+const lsLocaleSetting = (ls.get(LOCALE_KEY) || localeSetting) as LocaleSetting;
 
 interface LocaleState {
   localInfo: LocaleSetting;
@@ -35,6 +39,7 @@ export const useLocaleStore = defineStore({
      */
     setLocaleInfo(info: Partial<LocaleSetting>) {
       this.localInfo = { ...this.localInfo, ...info };
+      ls.set(LOCALE_KEY, this.localInfo);
     },
     /**
      * Initialize multilingual information and load the existing configuration from the local cache

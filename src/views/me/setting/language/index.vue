@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-09-27 15:42:44
- * @LastEditTime: 2021-09-27 16:02:48
+ * @LastEditTime: 2021-09-27 19:23:47
 -->
 <template>
   <div class="p-2">当前语言:{{ t('home.name') }}({{ lang }})</div>
@@ -25,7 +25,7 @@
 import { defineComponent, reactive, toRefs } from 'vue';
 import { useLocale } from '@/locales/useLocale';
 import type { LocaleType } from '#/config';
-import { localeList } from '@/setting/localeSetting';
+import { localeList } from '@/settings/localeSetting';
 import { useI18n } from '@/hooks/web/useI18n';
 
 export default defineComponent({

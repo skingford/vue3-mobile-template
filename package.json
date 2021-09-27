@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
+    "crypto-js": "^4.1.1",
     "dayjs": "^1.10.7",
     "fastclick": "^1.0.6",
     "lodash-es": "^4.17.21",
@@ -31,6 +32,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@tailwindcss/postcss7-compat": "^2.2.14",
+    "@types/crypto-js": "^4.0.2",
     "@types/fs-extra": "^9.0.13",
     "@vitejs/plugin-legacy": "^1.5.3",
     "@vitejs/plugin-vue": "^1.9.0",

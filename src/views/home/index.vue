@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-09-27 11:50:21
+ * @LastEditTime: 2021-09-27 15:06:20
 -->
 <template>
   <div class="home">
@@ -46,6 +46,7 @@
   <a href="alipays://platformapi/startapp?appId=60000002">打开支付宝的蚂蚁森林</a><br />
 
   <van-calendar v-model:show="show" @confirm="onConfirm" />
+  <div> === {{ t('home.name') }} === </div>
 
   <van-icon name="chat-o" /><br />
   <van-button type="primary" @click="show = true">主要按钮</van-button> <br />
@@ -56,10 +57,12 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { useI18n } from '@/hooks/web/useI18n';
 
 export default defineComponent({
   components: {},
   setup() {
+    const { t } = useI18n();
     const date = ref('');
     const show = ref(false);
 
@@ -70,6 +73,7 @@ export default defineComponent({
     };
 
     return {
+      t,
       date,
       show,
       onConfirm,

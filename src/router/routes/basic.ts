@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-24 10:42:38
- * @LastEditTime: 2021-08-20 14:19:22
+ * @LastEditTime: 2021-09-27 16:48:49
  */
 import type { AppRouteRecordRaw } from '@/router/types';
 import { REDIRECT_NAME, LAYOUT, EXCEPTION_COMPONENT, PAGE_NOT_FOUND_NAME } from '@/router/constant';
@@ -12,7 +12,7 @@ export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
   name: PAGE_NOT_FOUND_NAME,
   component: LAYOUT,
   meta: {
-    title: 'ErrorPage',
+    title: 'system.errorPage',
     hideBreadcrumb: true,
     hideMenu: true,
   },
@@ -22,7 +22,7 @@ export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {
       name: PAGE_NOT_FOUND_NAME,
       component: EXCEPTION_COMPONENT,
       meta: {
-        title: 'ErrorPage',
+        title: 'system.errorPage',
         hideBreadcrumb: true,
         hideMenu: true,
       },

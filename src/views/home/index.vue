@@ -1,83 +1,23 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-09-27 15:59:06
+ * @LastEditTime: 2021-09-27 16:16:35
 -->
 <template>
-  <div class="home">
-    home
-    <div class="t-1px">t-1px</div>
-    <div class="r-1px">r-1px</div>
-    <div class="b-1px">b-1px</div>
-    <div class="l-1px">l-1px</div>
-    <div class="f-1px">f-1px</div>
-  </div>
-  <!-- 拨打电话 -->
-  <a href="tel:10086">拨打电话给10086小姐姐</a> <br />
-
-  <!-- 发送短信 -->
-  <a href="sms:10086">发送短信给10086小姐姐</a><br />
-
-  <!-- 发送邮件 -->
-  <a href="mailto:young.joway@aliyun.com">发送邮件给JowayYoung</a><br />
-
-  <!-- 选择照片或拍摄照片 -->
-  <input type="file" accept="image/*" /><br />
-
-  <!-- 选择视频或拍摄视频 -->
-  <input type="file" accept="video/*" /><br />
-
-  <!-- 多选文件 -->
-  <input type="file" multiple /><br />
-
-  <!-- 纯数字 -->
-  <input type="number" placeholder="纯数字" pattern="\d*" /><br />
-
-  <!-- 打开微信 -->
-  <a href="weixin://">打开微信</a><br />
-
-  <!-- 打开支付宝 -->
-  <a href="alipays://">打开支付宝</a><br />
-
-  <!-- 打开支付宝的扫一扫 -->
-  <a href="alipays://platformapi/startapp?saId=10000007">打开支付宝的扫一扫</a><br />
-
-  <!-- 打开支付宝的蚂蚁森林 -->
-  <a href="alipays://platformapi/startapp?appId=60000002">打开支付宝的蚂蚁森林</a><br />
-
-  <div>==={{ locale }}： === {{ t('home.name') }} === </div>
-
-  <van-icon name="chat-o" /><br />
-  <van-button type="primary" @click="toggleLocale('en')">英文</van-button> <br />
-  <van-button type="primary" @click="toggleLocale('zh_CN')">中文</van-button> <br />
-  <van-button type="primary" size="large">大号按钮</van-button> <br />
-  <van-button type="primary" size="normal">普通按钮</van-button> <br />
-  <van-button type="primary" size="small">小型按钮</van-button> <br />
-  <van-button type="primary" size="mini">迷你按钮</van-button> <br />
+  <div> === {{ t('home.name') }} === </div>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue';
 import { useI18n } from '@/hooks/web/useI18n';
-import { useLocale } from '@/locales/useLocale';
-import type { LocaleType } from '#/config';
 
 export default defineComponent({
   components: {},
   setup() {
-    // const localeStore = useLocaleStoreWithOut();
-
     const { t } = useI18n();
-    const state = reactive({ locale: 'zh_CN' });
-    const { changeLocale } = useLocale();
-
-    async function toggleLocale(lang: LocaleType | string) {
-      await changeLocale(lang as LocaleType);
-      // location.reload();
-    }
+    const state = reactive({});
 
     return {
       t,
-      toggleLocale,
       ...toRefs(state),
     };
   },

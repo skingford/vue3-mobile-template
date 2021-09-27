@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:36:38
- * @LastEditTime: 2021-09-27 11:27:55
+ * @LastEditTime: 2021-09-27 16:42:50
  */
 import type { AppRouteModule } from '@/router/types';
 import { TABBAR_LAYOUT as LAYOUT } from '@/router/constant';
@@ -12,7 +12,7 @@ const tabbar: AppRouteModule = {
   component: LAYOUT,
   redirect: '/tabbar/home',
   meta: {
-    title: '首页',
+    title: 'tabbar.home',
     icon: 'wap-home-o',
   },
   children: [
@@ -21,7 +21,7 @@ const tabbar: AppRouteModule = {
       name: 'TabbarHome',
       component: () => import('@/views/home/index.vue'),
       meta: {
-        title: '首页',
+        title: 'tabbar.home',
       },
     },
     {
@@ -29,7 +29,7 @@ const tabbar: AppRouteModule = {
       name: 'TabbarMe',
       component: () => import('@/views/me/index.vue'),
       meta: {
-        title: '我的',
+        title: 'tabbar.me',
       },
     },
   ],

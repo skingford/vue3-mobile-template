@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-09-25 09:43:08
+ * @LastEditTime: 2021-09-25 11:57:28
 -->
 <template>
   <div class="home">
@@ -34,18 +34,18 @@
   <input type="number" placeholder="纯数字" pattern="\d*" /><br />
 
   <!-- 打开微信 -->
-  <a href="weixin://">打开微信</a>
+  <a href="weixin://">打开微信</a><br />
 
   <!-- 打开支付宝 -->
-  <a href="alipays://">打开支付宝</a>
+  <a href="alipays://">打开支付宝</a><br />
 
   <!-- 打开支付宝的扫一扫 -->
-  <a href="alipays://platformapi/startapp?saId=10000007">打开支付宝的扫一扫</a>
+  <a href="alipays://platformapi/startapp?saId=10000007">打开支付宝的扫一扫</a><br />
 
   <!-- 打开支付宝的蚂蚁森林 -->
-  <a href="alipays://platformapi/startapp?appId=60000002">打开支付宝的蚂蚁森林</a>
+  <a href="alipays://platformapi/startapp?appId=60000002">打开支付宝的蚂蚁森林</a><br />
 
-  <van-icon name="chat-o" />
+  <van-icon name="chat-o" /><br />
   <van-button type="primary">主要按钮</van-button> <br />
   <van-button type="primary" size="large">大号按钮</van-button> <br />
   <van-button type="primary" size="normal">普通按钮</van-button> <br />

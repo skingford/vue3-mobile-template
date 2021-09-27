@@ -11,7 +11,8 @@ import {
 
 import { CacheTypeEnum } from '@/enums/cacheEnum';
 
-export type LocaleType = 'zh_CN' | 'en' | 'ru' | 'ja' | 'ko';
+// 多语言类型
+export type LocaleType = 'zh_CN' | 'zh_TW' | 'en' | 'ru' | 'ja' | 'ko';
 
 export interface MenuSetting {
   bgColor: string;

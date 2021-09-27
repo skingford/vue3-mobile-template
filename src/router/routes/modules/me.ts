@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-16 00:36:38
- * @LastEditTime: 2021-09-27 11:30:38
+ * @LastEditTime: 2021-09-27 15:43:07
  */
 import type { AppRouteModule } from '@/router/types';
 import { LAYOUT } from '@/router/constant';
@@ -22,6 +22,14 @@ const MeRouteModule: AppRouteModule = {
       component: () => import('@/views/me/setting/index.vue'),
       meta: {
         title: '系统配置',
+      },
+    },
+    {
+      path: 'setting-language',
+      name: 'MeSettingLanguage',
+      component: () => import('@/views/me/setting/language/index.vue'),
+      meta: {
+        title: '选择语言',
       },
     },
   ],

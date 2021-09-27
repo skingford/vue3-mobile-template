@@ -1,13 +1,19 @@
 <!--
  * @Author: kingford
  * @Date: 2021-09-27 11:09:37
- * @LastEditTime: 2021-09-27 11:36:15
+ * @LastEditTime: 2021-09-27 15:43:36
 -->
 <template>
   <div class="me">
     <van-cell-group inset>
       <van-cell icon="font-o" title="主题配置" value="选择主题" />
-      <van-cell icon="setting-o" title="语言配置" value="切换语言" />
+      <van-cell
+        icon="setting-o"
+        title="语言配置"
+        value="切换语言"
+        is-link
+        to="/me/setting-language"
+      />
     </van-cell-group>
   </div>
 </template>

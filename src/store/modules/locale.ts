@@ -1,13 +1,12 @@
 /*
  * @Author: kingford
  * @Date: 2021-09-27 14:10:02
- * @LastEditTime: 2021-09-27 14:15:00
+ * @LastEditTime: 2021-09-27 15:27:01
  */
 import type { LocaleSetting, LocaleType } from '#/config';
 
 import { defineStore } from 'pinia';
 import { store } from '@/store';
-
 import { localeSetting } from '@/setting/localeSetting';
 
 const lsLocaleSetting = localeSetting;

@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 10:24:03
- * @LastEditTime: 2021-09-27 15:06:20
+ * @LastEditTime: 2021-09-27 15:59:06
 -->
 <template>
   <div class="home">
@@ -45,38 +45,40 @@
   <!-- 打开支付宝的蚂蚁森林 -->
   <a href="alipays://platformapi/startapp?appId=60000002">打开支付宝的蚂蚁森林</a><br />
 
-  <van-calendar v-model:show="show" @confirm="onConfirm" />
-  <div> === {{ t('home.name') }} === </div>
+  <div>==={{ locale }}： === {{ t('home.name') }} === </div>
 
   <van-icon name="chat-o" /><br />
-  <van-button type="primary" @click="show = true">主要按钮</van-button> <br />
+  <van-button type="primary" @click="toggleLocale('en')">英文</van-button> <br />
+  <van-button type="primary" @click="toggleLocale('zh_CN')">中文</van-button> <br />
   <van-button type="primary" size="large">大号按钮</van-button> <br />
   <van-button type="primary" size="normal">普通按钮</van-button> <br />
   <van-button type="primary" size="small">小型按钮</van-button> <br />
   <van-button type="primary" size="mini">迷你按钮</van-button> <br />
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, reactive, toRefs } from 'vue';
 import { useI18n } from '@/hooks/web/useI18n';
+import { useLocale } from '@/locales/useLocale';
+import type { LocaleType } from '#/config';
 
 export default defineComponent({
   components: {},
   setup() {
-    const { t } = useI18n();
-    const date = ref('');
-    const show = ref(false);
+    // const localeStore = useLocaleStoreWithOut();
 
-    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
-    const onConfirm = (value) => {
-      show.value = false;
-      date.value = formatDate(value);
-    };
+    const { t } = useI18n();
+    const state = reactive({ locale: 'zh_CN' });
+    const { changeLocale } = useLocale();
+
+    async function toggleLocale(lang: LocaleType | string) {
+      await changeLocale(lang as LocaleType);
+      // location.reload();
+    }
 
     return {
       t,
-      date,
-      show,
-      onConfirm,
+      toggleLocale,
+      ...toRefs(state),
     };
   },
 });

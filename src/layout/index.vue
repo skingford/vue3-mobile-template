@@ -1,11 +1,11 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:15:47
- * @LastEditTime: 2021-09-24 14:36:22
+ * @LastEditTime: 2021-09-27 11:29:11
 -->
 <template>
   <div class="app-layout">
-    <app-header :leftArrow="false"></app-header>
+    <app-header></app-header>
     <router-view></router-view>
   </div>
 </template>

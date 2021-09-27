@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-07-26 08:50:06
- * @LastEditTime: 2021-09-23 16:39:25
+ * @LastEditTime: 2021-09-27 11:23:11
  */
 import { PageEnum } from '@/enums/pageEnum';
 import { AppRouteModule, AppRouteRecordRaw } from '@/router/types';
@@ -14,6 +14,7 @@ const routeModuleList: AppRouteModule[] = [];
 Object.keys(modules).forEach((key) => {
   const mod = modules[key].default || {};
   const modList = Array.isArray(mod) ? [...mod] : [mod];
+
   routeModuleList.push(...modList);
 });
 

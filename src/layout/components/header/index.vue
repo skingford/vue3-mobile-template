@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:19:30
- * @LastEditTime: 2021-09-24 11:22:13
+ * @LastEditTime: 2021-09-27 11:34:30
 -->
 <template>
   <van-nav-bar
@@ -47,7 +47,9 @@ export default defineComponent({
       router.back();
     };
 
-    const onClickLeft = () => Toast('返回');
+    const onClickLeft = () => {
+      goBack();
+    };
     const onClickRight = () => Toast('按钮');
 
     return {

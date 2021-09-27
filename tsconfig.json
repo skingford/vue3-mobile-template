@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -9,16 +8,17 @@
     "allowSyntheticDefaultImports": true,
     "strictFunctionTypes": false,
     "jsx": "preserve",
+    "baseUrl": ".",
     "allowJs": true,
     "sourceMap": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["dom", "esnext"],
     "types": ["vite/client"],
-    "typeRoots": ["node_modules/@types/", "types"],
+    "typeRoots": ["./node_modules/@types/", "./types"],
     "noImplicitAny": false,
     "skipLibCheck": true,
     // add path
@@ -29,6 +29,7 @@
     }
   },
   "include": [
+    "tests/**/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
@@ -39,5 +40,5 @@
     "build/**/*.d.ts",
     "vite.config.ts"
   ],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
 }

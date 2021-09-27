@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-25 11:53:48
+ * @LastEditTime: 2021-09-27 14:44:20
  */
 import { createApp } from 'vue';
 
@@ -17,6 +17,7 @@ import { setupRouter, router } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
 import { setupErrorHandle, setupVConsole } from '@/logics';
 import { initAppConfig } from '@/config';
+import { setupI18n } from '@/locales/setupI18n';
 
 async function bootstrap() {
   const app = createApp(App);
@@ -28,6 +29,9 @@ async function bootstrap() {
 
   // app 初始化配置
   initAppConfig();
+
+  // 多语言
+  await setupI18n(app);
 
   // register router
   setupRouter(app);

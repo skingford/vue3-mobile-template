@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2021-06-13 01:43:14
- * @LastEditTime: 2021-09-23 19:20:59
+ * @LastEditTime: 2021-09-27 14:25:33
  */
 import { resolve } from 'path';
 import type { UserConfig, ConfigEnv } from 'vite';
@@ -37,6 +37,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     root,
     resolve: {
       alias: {
+        'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
         '@': pathResolve('src'),
         '#': pathResolve('types'),
         '@utils': pathResolve('src/utils'),

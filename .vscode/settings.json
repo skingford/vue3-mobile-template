@@ -27,5 +27,6 @@
   "cSpell.ignoreWords": ["menu", "mixins"],
   "files.autoSave": "onWindowChange",
   // 忽略unknownAtRules
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "i18n-ally.localesPaths": ["src/locales", "src/locales/language"]
 }

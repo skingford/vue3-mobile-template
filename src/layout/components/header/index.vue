@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2021-07-11 11:19:30
- * @LastEditTime: 2021-09-27 19:06:15
+ * @LastEditTime: 2021-09-29 17:17:40
 -->
 <template>
   <van-nav-bar
@@ -21,8 +21,7 @@
 import { defineComponent, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { Toast } from 'vant';
-import { useI18n } from '@/hooks/web/useI18n';
-import { isContainChinese } from '@/utils/validate';
+import { setPageTitle } from '@/config/pageTitle';
 
 export default defineComponent({
   props: {
@@ -36,16 +35,6 @@ export default defineComponent({
   },
   setup(props) {
     const router = useRouter();
-
-    const { t } = useI18n();
-
-    const tTitle = (title) => `router.${title}`;
-    const setPageTitle = (title) => {
-      if (isContainChinese(title)) {
-        return title;
-      }
-      return t(tTitle(title));
-    };
 
     const currentTitle = computed(() => {
       const { title } = router.currentRoute.value.meta;
@@ -63,7 +52,6 @@ export default defineComponent({
     const onClickRight = () => Toast('按钮');
 
     return {
-      t,
       goBack,
       onClickLeft,
       onClickRight,

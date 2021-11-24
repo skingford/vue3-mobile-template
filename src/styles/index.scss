@@ -12,16 +12,22 @@ html {
   //  font-size: calc(100vw / 7.5);
   height: 100%;
 
-  @media screen and (min-width: 320px) {
-    font-size: 64px;
-  }
+  // @media screen and (min-width: 320px) {
+  //   font-size: 64px;
+  // }
 
-  @media screen and (max-width: 540px) {
-    font-size: 108px;
-  }
+  // @media screen and (max-width: 540px) {
+  //   font-size: 108px;
+  // }
 
-  @media screen and (max-width: 1024px) {
-    font-size: calc(100vw / 7.5);
+  // @media screen and (max-width: 1024px) {
+  //   font-size: calc(100vw / 7.5);
+  // }
+
+  @media screen and (min-width: 750px) {
+    /*超过750，就设置font-size为75px。意思就是我们最大的font-size为75px，也以为这屏幕最大为750px，因为屏幕再变大，界面不跟着变了（我们设置的body宽度为10rem）*/
+
+    font-size: 75px !important /*no*/;
   }
 
   body {
